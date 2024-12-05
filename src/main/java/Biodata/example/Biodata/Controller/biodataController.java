@@ -11,4 +11,9 @@ public class biodataController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/portfolio")
+    public String showPortfolio() {
+        return "portfolio";  // ini akan merender portfolio.html dari folder templates
+    }
 }

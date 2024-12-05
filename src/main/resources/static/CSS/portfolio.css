@@ -1,0 +1,200 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --primary: #333333;
+    --primary-dark: #1A1A1A;
+    --secondary: #FF8C42;
+    --accent: #FFA15F;
+    --light: #F5F5F5;
+    --text-light: #FFFFFF;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    background: linear-gradient(135deg, #121212, #1f1f1f, #2b2b2b);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    background: var(--secondary);
+    color: var(--text-light);
+    transform: translateX(-5px);
+}
+
+/* Portfolio Header */
+.portfolio-header {
+    padding: 150px 0 100px;
+    text-align: center;
+}
+
+.portfolio-header h1 {
+    font-family: var(--heading-font);
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.portfolio-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 50px 0 100px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--secondary);
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+.project-info h2 {
+    font-family: var(--heading-font);
+    color: var(--secondary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.tech-stack {
+    margin-bottom: 30px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    padding: 8px 15px;
+    background: rgba(255, 140, 66, 0.1);
+    color: var(--secondary);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 5px;
+    border: 1px solid rgba(255, 140, 66, 0.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-custom, .btn-github {
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-custom {
+    background: var(--secondary);
+    color: var(--text-light);
+}
+
+.btn-github {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+.btn-custom:hover, .btn-github:hover {
+    transform: translateY(-3px);
+    color: var(--text-light);
+}
+
+.btn-custom:hover {
+    background: var(--accent);
+}
+
+.btn-github:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-header h1 {
+        font-size: 3rem;
+    }
+    
+    .project-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .back-btn {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .portfolio-header {
+        padding: 120px 0 60px;
+    }
+    
+    .portfolio-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-content {
+        padding: 25px;
+    }
+}

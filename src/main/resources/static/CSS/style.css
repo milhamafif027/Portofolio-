@@ -123,6 +123,14 @@ body {
    line-height: 1.2;
    letter-spacing: -1px;
    text-transform: uppercase;
+   white-space: nowrap; /* Tambahkan ini */
+}
+
+@media (max-width: 768px) {
+   .hero-section h1 {
+       font-size: 2.5rem;
+       white-space: normal; /* Biarkan wrap pada layar kecil */
+   }
 }
 
 /* Button Styles */
@@ -436,4 +444,38 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/* Page Transition */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.7s ease;
+}
+
+.page-transition.active {
+    transform: translateY(0);
+}
+
+/* Tambahkan smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation untuk konten */
+.section-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.section-fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
