@@ -1,5 +1,8 @@
-/* Import Google Fonts */
+/*--------------------------------------------------------------
+# 1. Fonts & Variables
+--------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Raleway:wght@700;800&display=swap');
 
 :root {
    --primary: #333333;
@@ -12,13 +15,25 @@
    --body-font: 'Poppins', sans-serif;
 }
 
+/*--------------------------------------------------------------
+# 2. Basic Styles
+--------------------------------------------------------------*/
 body {
    font-family: var(--body-font);
    overflow-x: hidden;
 }
 
-/* Navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# 3. Navigation Bar
+--------------------------------------------------------------*/
 .navbar {
+   font-family: 'Raleway', sans-serif;
+   font-size: 26px;
+   font-weight: 800;
    background: linear-gradient(45deg, #1A1A1A, #333333);
    padding: 20px 0;
    position: fixed;
@@ -27,6 +42,8 @@ body {
    transition: all 0.3s ease;
    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
    border-bottom: 1px solid rgba(255,140,66,0.1);
+   animation: slideDown 0.8s ease forwards;
+   letter-spacing: 1.5;
 }
 
 .navbar.scrolled {
@@ -35,14 +52,15 @@ body {
 }
 
 .navbar-brand {
-   font-family: var(--heading-font);
-   font-size: 24px;
+   font-family: 'Raleway', sans-serif;  /* Font yang lebih modern */
+   font-size: 26px;
    font-weight: 800;
    background: linear-gradient(45deg, var(--secondary), var(--accent));
+   background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    transition: transform 0.3s ease;
-   letter-spacing: 1px;
+   letter-spacing: 1.5px;
 }
 
 .navbar-brand:hover {
@@ -85,7 +103,9 @@ body {
    transform: translateY(-2px);
 }
 
-/* Hero Section */
+/*--------------------------------------------------------------
+# 4. Hero Section
+--------------------------------------------------------------*/
 .hero-section {
    min-height: 100vh;
    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
@@ -123,17 +143,12 @@ body {
    line-height: 1.2;
    letter-spacing: -1px;
    text-transform: uppercase;
-   white-space: nowrap; /* Tambahkan ini */
+   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-   .hero-section h1 {
-       font-size: 2.5rem;
-       white-space: normal; /* Biarkan wrap pada layar kecil */
-   }
-}
-
-/* Button Styles */
+/*--------------------------------------------------------------
+# 5. Button Styles
+--------------------------------------------------------------*/
 .btn-custom, .learn-more {
     font-family: var(--body-font);
     background: var(--secondary);
@@ -158,18 +173,6 @@ body {
     box-shadow: 0 5px 15px rgba(255,140,66,0.3);
 }
 
-.learn-more {
-    background: var(--secondary);
-    border: none;
-    cursor: pointer;
-}
-
-.learn-more:hover {
-    background: var(--accent);
-    text-decoration: none;
-}
-
-/* Optional: Add subtle shine effect */
 .btn-custom::before, .learn-more::before {
     content: '';
     position: absolute;
@@ -190,7 +193,9 @@ body {
     left: 100%;
 }
 
-/* Social Icons */
+/*--------------------------------------------------------------
+# 6. Social Icons
+--------------------------------------------------------------*/
 .social-icons {
    margin-top: 40px;
 }
@@ -207,7 +212,9 @@ body {
    transform: translateY(-3px);
 }
 
-/* About Section */
+/*--------------------------------------------------------------
+# 7. About Section
+--------------------------------------------------------------*/
 .about-section {
    padding: 100px 0;
    background: linear-gradient(to bottom, #121212, #1f1f1f, #2b2b2b, #373737, #3e3e3e, #424242);
@@ -236,6 +243,10 @@ body {
    overflow: hidden;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
    transition: transform 0.3s ease;
+   margin-bottom: 30px;
+   max-width: 500px;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .about-img:hover {
@@ -250,7 +261,9 @@ body {
    margin-bottom: 30px;
 }
 
-/* Skills Section */
+/*--------------------------------------------------------------
+# 8. Skills Section
+--------------------------------------------------------------*/
 .skills-section {
    min-height: 100vh;
    width: 100%;
@@ -274,7 +287,6 @@ body {
    position: relative;
 }
 
-/* Side line */
 .skills-content::after {
    content: '';
    position: absolute;
@@ -347,7 +359,25 @@ body {
    transition: width 1s ease;
 }
 
-/* Responsive Design */
+/*--------------------------------------------------------------
+# 9. Responsive Design
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+   .navbar {
+       padding: 15px 0;
+   }
+
+   .navbar-brand {
+       font-size: 22px;
+   }
+   
+   .nav-link {
+       font-size: 14px;
+       padding: 10px 15px;
+       margin: 5px 0;
+   }
+}
+
 @media (max-width: 1200px) {
    .skills-section .container {
        padding: 100px 50px;
@@ -395,6 +425,11 @@ body {
 }
 
 @media (max-width: 768px) {
+   .hero-section h1 {
+       font-size: 2.5rem;
+       white-space: normal;
+   }
+   
    .skills-section .container {
        padding: 80px 30px;
    }
@@ -404,7 +439,9 @@ body {
    }
 }
 
-/* Animations */
+/*--------------------------------------------------------------
+# 10. Animations
+--------------------------------------------------------------*/
 [data-aos] {
    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -419,7 +456,6 @@ body {
    transform: translateY(0);
 }
 
-/* transition */
 .section-transition {
     opacity: 0;
     transform: translateY(20px);
@@ -429,10 +465,6 @@ body {
 .section-transition.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-.navbar {
-    animation: slideDown 0.8s ease forwards;
 }
 
 @keyframes slideDown {
@@ -446,7 +478,6 @@ body {
     }
 }
 
-/* Page Transition */
 .page-transition {
     position: fixed;
     top: 0;
@@ -463,12 +494,6 @@ body {
     transform: translateY(0);
 }
 
-/* Tambahkan smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Animation untuk konten */
 .section-fade {
     opacity: 0;
     transform: translateY(20px);
